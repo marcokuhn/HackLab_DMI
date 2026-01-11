@@ -46,7 +46,7 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 ## Prerequisites
 
 - **Hardware**: 
-  - [Electrosmith Daisy Seed](https://www.electro-smith.com/daisy/daisy-seed)
+  - [Electrosmith Daisy Seed](https://electro-smith.com/pages/the-daisy-seed)
   - Breadboard & Jumper Wires
   - Potentiometers (10k Linear), Switches/Buttons
   - Optional: Teensy 4.x, ESP32 Dev Module
@@ -55,6 +55,8 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
   - [Git](https://git-scm.com/)
   - [DaisyToolchain](https://github.com/electro-smith/DaisyToolchain)
   - [Plug Data](https://plugdata.org/)
+
+- **Github EDU Program**:
 
 
 ## Getting Started
@@ -67,6 +69,28 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 3. **Build your first example**: Navigate to `Week1_Foundations/Examples/01_Blinky` and build the project.
 
 ## Resources
+
+- [DESIGNING MUSICAL INSTRUMENTS](https://github.com/marcokuhn/DMI)
+- [BOARDS](https://github.com/marcokuhn/DMI/tree/main/Boards)
+- [PROTOCOLS MIDI / OSC / HID](https://github.com/marcokuhn/DMI/tree/main/Protocols)
+- [PLUGDATA](https://github.com/marcokuhn/plugdata)
+- **MAX/MSP – OOPSY**:
+  - [GETTING STARTED WITH OOPSY](https://daisy.audio/tutorials/oopsy-dev-env)
+  - [INTRODUCTION / SETUP BY CYCLING74](https://cycling74.com/tutorials/oopsydaisy-patch-an-introduction)
+- **DIY COMMUNITY PAGES**:
+  - [INSTRUCTABLES](https://www.instructables.com/)
+  - [ARDUINO PROCJECT HUB](https://projecthub.arduino.cc/)
+
+- **HELPFUL LINKS**:
+  - [An Introduction To Additive Synthesis by Sound On Sound](https://www.soundonsound.com/techniques/introduction-additive-synthesis)
+  - [MIDI – NOTES – FREQUENCY](http://newt.phys.unsw.edu.au/jw/graphics/notes.GIF)
+
+
+
+
+
+ 
+
 
 - [libDaisy Documentation](https://electro-smith.github.io/libDaisy/)
 - [DaisySP Documentation](https://electro-smith.github.io/DaisySP/)
