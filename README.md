@@ -16,8 +16,20 @@ C++, Plugdata, or Max/MSP Gen~ — and start creating sound.
 In addition to Daisy, we’ll talk also about Teensy board projects and ESP32/Arduino
 microcontrollers for interactive interfaces. You'll learn how to design both the sonic and physical aspects of electronic instruments, combining code, sensors, and sound design.
 
+- **Topics**:
+  - Synthesis techniques and sound generation
+  - Audio effects and real-time DSP processing
+  - Sample-based playback and manipulation
+  - Human-Computer Interaction using ESP32 / Arduino
+  - Prototyping new musical instruments and sound interfaces
+
 **Duration**: 5 Weeks (approx. 25 hours)  
 **Target Level**: Beginner to Intermediate/Advanced  
+
+## Who is it for?
+Artists, developers, and students from media arts, music tech, interaction design, or electronic
+engineering. Some experience with coding (Arduino or C++) is helpful, but not required. Curiosity
+and a willingness to experiment are essential.
 
 ## Structure
 
@@ -42,6 +54,8 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
   - [VS Code](https://code.visualstudio.com/)
   - [Git](https://git-scm.com/)
   - [DaisyToolchain](https://github.com/electro-smith/DaisyToolchain)
+  - [Plug Data](https://plugdata.org/)
+
 
 ## Getting Started
 
