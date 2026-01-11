@@ -1,10 +1,20 @@
-# Microcontrollers in Audio Design (Audiodesign B.A.)
+# DESIGNING MUSICAL INSTRUMENTS
 
 Welcome to the course repository for **DESIGNING MUSICAL INSTRUMENTS**. This 5-week course introduces the world of embedded audio programming, focusing on the **Electrosmith Daisy** ecosystem, while also touching upon Teensy, ESP32, and Arduino platforms.
 
 ## Course Overview
 
-This course is designed to take you from C++ basics to creating your own digital musical instruments. We will cover synthesis, sampling, sequencing, and communication protocols.
+This hands-on hacklab explores the creative and technical possibilities of embedded audio
+processing and human-computer interaction (HCI). The main focus is on the Daisy Seed
+platform — a powerful, open-source system designed specifically for high-fidelity music and
+sound applications.
+
+Whether you're building synthesizers, effect units, or sample-based instruments, the Daisy Seed
+gives you the tools to start prototyping immediately. Just connect via USB and upload code in
+C++, Plugdata, or Max/MSP Gen~ — and start creating sound.
+
+In addition to Daisy, we’ll talk also about Teensy board projects and ESP32/Arduino
+microcontrollers for interactive interfaces. You'll learn how to design both the sonic and physical aspects of electronic instruments, combining code, sensors, and sound design.
 
 **Duration**: 5 Weeks (approx. 25 hours)  
 **Target Level**: Beginner to Intermediate/Advanced  
