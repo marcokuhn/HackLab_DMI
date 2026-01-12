@@ -70,7 +70,10 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 
 ## Resources
 
-- [DESIGNING MUSICAL INSTRUMENTS](https://github.com/marcokuhn/DMI)
+- **DESIGNING MUSICAL INSTRUMENTS**:
+  - [MY DMI GITHUB REPO](https://github.com/marcokuhn/DMI)
+  - [MY DESIGNING MUSICAL INSTRUMENTS AND INTERFACE`S – NOTES](https://docs.google.com/document/d/1hjBtpGJ45WqV1oRX1YgRrDY6dNrMRRBSM3sY6Dd7R5Y/edit?tab=t.0)
+
 - [BOARDS](https://github.com/marcokuhn/DMI/tree/main/Boards)
 - [PROTOCOLS MIDI / OSC / HID](https://github.com/marcokuhn/DMI/tree/main/Protocols)
 - [PLUGDATA](https://github.com/marcokuhn/plugdata)
