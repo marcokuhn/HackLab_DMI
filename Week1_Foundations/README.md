@@ -18,34 +18,37 @@ A Microcontroller Unit (MCU) is a compact integrated circuit designed to govern 
 *   **Real-time constraints**: For audio, we strictly need to process samples within a specific timeframe (latency).
 *   **Peripherals**: GPIO (General Purpose Input/Output), ADC (Analog to Digital Converter), DAC (Digital to Analog Converter).
 
-## 2. Setting Up
-1.  **Install VS Code**: The primary editor.
-2.  **Install the Toolchain**:
-    *   **Windows/Mac**: Use the [DaisyToolchain](https://github.com/electro-smith/DaisyToolchain) installer. It includes GCC (compiler), Make, and OpenOCD (debugger).
-3.  **Test the install**: Run `make --version` in your terminal.
+- **DAIZY**:
+    - [DAIZY HARDWARE INTRODUCTION](https://daisy.audio/hardware/Seed/)
+    - [DAIZY CODING OPTIONS](https://daisy.audio/software/)
 
-## 3. C++ Refresher
-Embedded audio relies heavily on C++.
-*   **Structure**: Header files (`.h`) for declarations, Source files (`.cpp`) for implementation.
-*   **Classes**: We use classes to represent hardware components (e.g., `Switch`, `Led`, `Oscillator`).
+## 2. Setting Up C++ ENVIRONMENT
+- [Getting Started with C++ Daisy](https://daisy.audio/tutorials/cpp-dev-env/)
+- [GIT INTRODUCTION](https://rogerdudler.github.io/git-guide/)
+- [INTRODUCTION TO GITHUB](https://github.com/skills/introduction-to-github?tab=readme-ov-file)
 
-### Example: A Simple Class
-```cpp
-class Led {
-public:
-    void Init() { /* Setup GPIO */ }
-    void TurnOn() { /* Set High */ }
-    void TurnOff() { /* Set Low */ }
-};
-```
-
-## 4. First Project: Blinky
+## 3. BLINK EXAMPLE via C++
 The "Hello World" of electronics.
-1.  Go to `Examples/01_Blinky`.
-2.  Open `main.cpp`. (See example code in the folder).
-3.  **Compile**: Run `make`.
-4.  **Flash**: Put Daisy in Bootloader mode (Hold BOOT, Press RESET, Release RESET, Release BOOT) and run `make program-dfu`.
-5.  Observe the onboard LED blinking!
+- See https://daisy.audio/tutorials/cpp-dev-env/#4-run-the-blink-example
+- IMPORTANT: Before Deployment put Daisy in Bootloader mode (Hold BOOT, Press RESET, Release RESET, Release BOOT) 
 
----
-**Assignment**: Modify the blinking speed. Try to create a "heartbeat" pattern (double blink).
+TODO: Modify the blinking speed.
+
+## 4. SOUND EXAMPLE via C++  
+- Navigate to DaisyExamples and OPEN "DaisyExamples/seed/DSP/oscillator" via vsCode
+- put Daisy in Bootloader mode (Hold BOOT, Press RESET, Release RESET, Release BOOT) 
+- Launch the command palette with Ctrl+P on Windows or Cmd+P on macOS
+- execute -> "task build_and_program_dfu"
+- Listen
+TODO: Change Default Pitch.
+
+## 5. SOUND EXAMPLE via PLUGDATA
+- OPEN "./Examples/Plugdata/oscillator.pd" via PLUGDATA
+TODO: Change Default Pitch
+TODO: Change Default Amplitude
+TODO: Change Default Waveform - see [Reference](https://electro-smith.github.io/DaisySP/classdaisysp_1_1_oscillator.html) of [DaisySP](https://github.com/electro-smith/DaisySP)
+
+## 6. START YOUR OWN PROJECT
+- see – https://daisy.audio/tutorials/create-new-project/
+- /helper.py create MyProjects/MyFirstProject --board seed
+

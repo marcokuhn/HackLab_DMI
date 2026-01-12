@@ -82,7 +82,8 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 - [PROTOCOLS MIDI / OSC / HID](https://github.com/marcokuhn/DMI/tree/main/Protocols)
 
 - **DAISY**:
-   - [DaisySP – A Powerful, Open Source DSP Library in C++](https://electro-smith.github.io/DaisySP/)
+  - [DAISY WIKI](https://daisy.audio/)  
+  - [DaisySP – A Powerful, Open Source DSP Library in C++](https://electro-smith.github.io/DaisySP/)
   - [libDaisy – Hardware Abstraction Library for the Daisy Audio Platform](https://electro-smith.github.io/libDaisy/)
 - **MAX/MSP – OOPSY**:
   - [GETTING STARTED WITH OOPSY](https://daisy.audio/tutorials/oopsy-dev-env)
