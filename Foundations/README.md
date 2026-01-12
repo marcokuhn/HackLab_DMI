@@ -44,6 +44,16 @@ TODO: Change Default Pitch.
 
 ## 5. SOUND EXAMPLE via PLUGDATA
 - OPEN "./Examples/Plugdata/oscillator.pd" via PLUGDATA
+- Compile
+    - Patch to export > Currently open Patch
+    - Target Board: Pod
+    - execute Flash
+
+Toubbleshoothing: 
+error Message: Library not loaded: @executable_path/../lib/libusb-1.0.0.dylib
+Reason: mapped file has no cdhash, completely unsigned? Code has to be at least ad-hoc signed.
+- execute in terminal: codesign --force --deep --sign - /Users/{yourUserName}/Documents/plugdata/Toolchain/bin/dfu-util
+
 TODO: Change Default Pitch
 TODO: Change Default Amplitude
 TODO: Change Default Waveform - see [Reference](https://electro-smith.github.io/DaisySP/classdaisysp_1_1_oscillator.html) of [DaisySP](https://github.com/electro-smith/DaisySP)
