@@ -74,6 +74,9 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 - [BOARDS](https://github.com/marcokuhn/DMI/tree/main/Boards)
 - [PROTOCOLS MIDI / OSC / HID](https://github.com/marcokuhn/DMI/tree/main/Protocols)
 - [PLUGDATA](https://github.com/marcokuhn/plugdata)
+- **DAISY**:
+  - [libDaisy Documentation](https://electro-smith.github.io/libDaisy/)
+  - [DaisySP Documentation](https://electro-smith.github.io/DaisySP/)
 - **MAX/MSP – OOPSY**:
   - [GETTING STARTED WITH OOPSY](https://daisy.audio/tutorials/oopsy-dev-env)
   - [INTRODUCTION / SETUP BY CYCLING74](https://cycling74.com/tutorials/oopsydaisy-patch-an-introduction)
@@ -84,17 +87,5 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 - **HELPFUL LINKS**:
   - [An Introduction To Additive Synthesis by Sound On Sound](https://www.soundonsound.com/techniques/introduction-additive-synthesis)
   - [MIDI – NOTES – FREQUENCY](http://newt.phys.unsw.edu.au/jw/graphics/notes.GIF)
-
-
-
-
-
- 
-
-
-- [libDaisy Documentation](https://electro-smith.github.io/libDaisy/)
-- [DaisySP Documentation](https://electro-smith.github.io/DaisySP/)
-- [Open Sound Control (OSC)](https://opensoundcontrol.org/)
-- [MIDI Specification](https://www.midi.org/specifications)
 
 ---
