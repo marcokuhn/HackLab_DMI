@@ -72,7 +72,6 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 
 - **DESIGNING MUSICAL INSTRUMENTS**:
   - [MY DMI GITHUB REPO](https://github.com/marcokuhn/DMI)
-  - [MY DESIGNING MUSICAL INSTRUMENTS AND INTERFACE`S – NOTES](https://docs.google.com/document/d/1hjBtpGJ45WqV1oRX1YgRrDY6dNrMRRBSM3sY6Dd7R5Y/edit?tab=t.0)
 - **BOARDS**:
   - [ARDUINO](https://www.arduino.cc/)
   - [ESP32/ESP8266](https://randomnerdtutorials.com/getting-started-with-esp32/)
