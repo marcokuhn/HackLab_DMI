@@ -4,7 +4,7 @@
 This week establishes the groundwork for embedded audio programming. We will understand what a microcontroller is, how it differs from a regular computer, and set up our development environment. We will also cover C++ essentials needed for the course.
 
 ## Learning Objectives
-- Understanding Microcontrollers (MCU) vs Microprocessors (MPU).
+- Understanding Microcontrollers (MCU)
 - Overview of platforms: **Daisy**, **Teensy**, **ESP32**, **Arduino**.
 - Setting up the **DaisyToolchain** and VS Code.
 - C++ Basics: Compilation, Variables, Functions, Classes.
