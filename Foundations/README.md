@@ -4,7 +4,7 @@
 This week establishes the groundwork for embedded audio programming. We will understand what a microcontroller is, how it differs from a regular computer, and set up our development environment. We will also cover C++ essentials needed for the course.
 
 ## Learning Objectives
-- Understanding Microcontrollers (MCU) vs Microprocessors (MPU).
+- Understanding Microcontrollers (MCU)
 - Overview of platforms: **Daisy**, **Teensy**, **ESP32**, **Arduino**.
 - Setting up the **DaisyToolchain** and VS Code.
 - C++ Basics: Compilation, Variables, Functions, Classes.
@@ -20,6 +20,7 @@ A Microcontroller Unit (MCU) is a compact integrated circuit designed to govern 
 
 - **DAIZY**:
     - [DAIZY HARDWARE INTRODUCTION](https://daisy.audio/hardware/Seed/)
+    - [DAIZY SEED PINOUT](https://daisy.nyc3.cdn.digitaloceanspaces.com/products/seed/Daisy_Seed_pinout-25.pdf)
     - [DAIZY CODING OPTIONS](https://daisy.audio/software/)
 
 ## 2. Setting Up C++ ENVIRONMENT
@@ -43,7 +44,7 @@ TODO: Modify the blinking speed.
 TODO: Change Default Pitch.
 
 ## 5. SOUND EXAMPLE via PLUGDATA
-- OPEN "./Examples/Plugdata/oscillator.pd" via PLUGDATA
+- Download and Open [oscillator.pd](https://github.com/marcokuhn/HackLab_DMI/blob/main/Foundations/Examples/Plugdata/oscillator.pd) via PLUGDATA
 - Compile
     - Patch to export > Currently open Patch
     - Target Board: Pod
