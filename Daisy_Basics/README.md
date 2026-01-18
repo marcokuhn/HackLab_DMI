@@ -17,6 +17,31 @@ Physical sound is continuous (analog). Computers work with discrete steps (digit
 
 ## 2. Basic Program Structure
 
+This program demonstrates the fundamental structure of a Daisy audio application. It generates a continuous 440 Hz sine wave tone (the musical note A4) and outputs it to both left and right audio channels.
+
+### Key Components:
+
+1. **Hardware Object (`DaisySeed hw`)**: Manages all communication with the physical Daisy Seed board, including audio I/O, sample rate, and buffer management.
+
+2. **Oscillator Object (`Oscillator osc`)**: A DaisySP module that generates audio waveforms. It can produce sine, sawtooth, square, and triangle waves at specified frequencies and amplitudes.
+
+3. **Audio Callback Function**: The heart of real-time audio processing. This function is called automatically by the hardware at regular intervals (12,000 times per second with our settings) to fill the audio buffer with new samples.
+
+4. **Main Function**: Runs once at startup to:
+   - Initialize the hardware
+   - Configure the oscillator parameters (waveform type, frequency, amplitude)
+   - Start the audio engine
+   - Keep the program alive with an infinite loop
+
+### Program Flow:
+
+```
+Startup → Initialize Hardware → Configure Oscillator → Start Audio Engine → 
+→ [AudioCallback runs continuously in background] → Infinite Loop
+```
+
+The AudioCallback processes audio in small chunks (blocks) rather than one sample at a time for efficiency. With a block size of 4 samples and a sample rate of 48,000 Hz, each callback processes 4 samples and is called 12,000 times per second, resulting in ultra-low latency (0.083 ms).
+
 ```cpp
 // example adopted from https://github.com/electro-smith/DaisyExamples/blob/master/seed/DSP/oscillator/oscillator.cpp
 
