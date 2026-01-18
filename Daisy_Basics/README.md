@@ -144,39 +144,184 @@ e.g.
 +   **...**
 
 
-## 4.BASIC Examples
+## 4. BASIC Examples
 
 - Make you familiar with the DaisySP Reference e.g. Oscillator – [DaisySP Oscillator Reference](https://electro-smith.github.io/DaisySP/classdaisysp_1_1_oscillator.html)  
 - Learn from examples > [Daisy Seed DSP Examples](https://github.com/electro-smith/DaisyExamples/tree/master/seed/DSP)
 
-### CONNECT LFO To Oscillator Amplitude 
-### Chain modules (OSC + Filter)
-### Connect LFO to Filter Frequency (OSC > Filter > Out)
-### Mix signals together (Additive Synth with 5 Oscillator)
+---
+
+### 4.1 CONNECT LFO To Oscillator Amplitude 
+
+**What is this?** An LFO (Low Frequency Oscillator) is a oscillator that modulates (changes) other parameters (< 40 Hz). In this example it changes the volume of the Oscillator. It creates a "wobbling" or "pulsing" effect - like someone turning a volume knob up and down very fast. The main oscillator generates the sound, and the LFO controls how loud it gets.
+
+**Real-world example:** Think of a siren - the pitch stays the same but the volume goes up and down rhythmically.
 
 ```cpp
-// Example to mix 2 signals together
-static Oscillator osc1;  // First oscillator
-static Oscillator osc2;  // Second oscillator
+static Oscillator osc;      // Main audio oscillator (generates the tone)
+static Oscillator lfo;      // LFO oscillator (very slow, controls amplitude)
 
 static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                           AudioHandle::InterleavingOutputBuffer out,
                           size_t                                size)
 {
-    float sig1, sig2, mixed;
+    float sig, lfo_mod, modulated_sig;
     
     for(size_t i = 0; i < size; i += 2)
     {
-        // Generate samples from both oscillators
-        sig1 = osc1.Process();
-        sig2 = osc2.Process();
+        // Generate the audio signal
+        sig = osc.Process();
         
-        // Mix them together (add and scale)
-        mixed = (sig1 + sig2) * 0.5f;
+        // Generate the LFO signal (ranges from -1 to 1)
+        // Shift and scale it to 0-1 range for amplitude control
+        lfo_mod = (lfo.Process() + 1.0f) * 0.5f;  // Now ranges from 0 to 1
         
-        // Output to both channels
+        // Multiply the audio signal by the LFO (modulate the amplitude)
+        modulated_sig = sig * lfo_mod;
+        
+        // Output the modulated signal
+        out[i] = modulated_sig;
+        out[i + 1] = modulated_sig;
+    }
+}
+
+// In main(), initialize both oscillators:
+// Oscillator frequency = 550 Hz
+// LFO freuqncy = 5 Hz
+```
+
+---
+
+### 4.2 Chain modules (OSC → Filter → Out)
+
+**What is this?** Signal chaining means sending the output of one module into the input of another. The audio flows through a chain: Oscillator → Filter → Output. A filter removes or emphasizes certain frequencies.
+
+**Real-world example:** Like in a subtractive synth
+
+```cpp
+static Oscillator osc;      // Generates raw audio
+static Svf filter;          // State Variable Filter (can cut or boost frequencies)
+
+static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                          AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+{
+    float osc_sig, filtered_sig;
+    
+    for(size_t i = 0; i < size; i += 2)
+    {
+        // Step 1: Generate the oscillator signal
+        osc_sig = osc.Process();
+        
+        // Step 2: Send it through the filter
+        filtered_sig = filter.Process(osc_sig);
+        
+        // Step 3: Output the filtered signal
+        out[i] = filtered_sig;
+        out[i + 1] = filtered_sig;
+    }
+}
+
+// In main(), 
+// inittialize the oscillator: Frequency = 440Hz, Waveform = Sawtooth, Amplitude = 0.5
+// initialize the filter: Frequency = 1000 Hz, Resonance = 0.6
+```
+
+---
+
+### 4.3 Connect LFO to Filter Frequency (OSC → Filter → Out, LFO modulates Filter)
+
+**What is this?** Instead of modulating amplitude like example 4.1, here the LFO controls the filter's cutoff frequency. This creates a sweeping, evolving sound where the filter opens and closes automatically. It's like the tone color is changing over time.
+
+**Real-world example:** Subtractive synth with LFO`s
+
+```cpp
+static Oscillator osc;      // Main audio oscillator
+static Oscillator lfo;      // LFO controls the filter cutoff
+static Svf filter;          // The filter being modulated
+
+static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                          AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+{
+    float osc_sig, lfo_freq, filtered_sig;
+    
+    for(size_t i = 0; i < size; i += 2)
+    {
+        // Generate the audio signal
+        osc_sig = osc.Process();
+        
+        // Generate the LFO signal and map it to filter frequency range
+        // LFO ranges -1 to 1, map to 200-4000 Hz
+        lfo_freq = (lfo.Process() + 1.0f) * 0.5f;  // change the range of the LFO from (-1,1) to (0,1) – Normalisation
+        lfo_freq = 200.0f + (lfo_freq * 3800.0f);  // scale to Frequency Domain 200 to 4000 Hz
+        
+        // Update filter cutoff with LFO value
+        filter.SetFreq(lfo_freq);
+        
+        // Process audio through the filter
+        filtered_sig = filter.Process(osc_sig);
+        
+        // Output the result
+        out[i] = filtered_sig;
+        out[i + 1] = filtered_sig;
+    }
+}
+
+// In main(), 
+// inittialize the oscillator: Frequency = 600Hz, Waveform = Sawtooth, Amplitude = 0.5
+// initialize the filter: Frequency = 1000 Hz, Resonance = 0.6
+```
+
+---
+
+### 4.4 Mix signals together (Additive Synth with 5 Oscillators)
+
+**What is this?** Additive synthesis builds complex tones by mixing multiple simple sine waves (oscillators) at different frequencies and amplitudes together. It's called "additive" because you ADD many simple signals. This is how professional synthesizers create rich, natural-sounding tones.
+
+**Real-world example:** Additive synth
+
+```cpp
+// Create 5 oscillators to build a rich harmonic tone
+static Oscillator osc1;     // Fundamental frequency (220 Hz - A3)
+static Oscillator osc2;     // 1st harmonic (440 Hz - 2x fundamental)
+static Oscillator osc3;     // 2nd harmonic (660 Hz - 3x fundamental)
+static Oscillator osc4;     // 3rd harmonic (880 Hz - 4x fundamental)
+static Oscillator osc5;     // 4th harmonic (1100 Hz - 5x fundamental)
+
+static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                          AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+{
+    float sig1, sig2, sig3, sig4, sig5, mixed;
+    
+    for(size_t i = 0; i < size; i += 2)
+    {
+        // Generate all 5 signals
+        sig1 = osc1.Process() * 0.5f;   // Fundamental (strongest)
+        sig2 = osc2.Process() * 0.3f;   // 2nd (weaker)
+        sig3 = osc3.Process() * 0.2f;   // 3rd
+        sig4 = osc4.Process() * 0.15f;  // 4th
+        sig5 = osc5.Process() * 0.1f;   // 5th (weakest)
+        
+        // Mix them together
+        mixed = sig1 + sig2 + sig3 + sig4 + sig5;
+        
+        // Normalize the Amplitude to prevent clipping (divide by the amount of the oscillators)
+        mixed = mixed * 0.2f;  // Adjust overall volume
+        
+        // Output the rich, harmonic sound
         out[i] = mixed;
         out[i + 1] = mixed;
     }
 }
+
+// In main(), initialize all 5 oscillators with harmonic frequencies:
+// osc1.Init(sample_rate);  osc1.SetFreq(220);   // Fundamental
+// osc2.Init(sample_rate);  osc2.SetFreq(440);   // 2x
+// osc3.Init(sample_rate);  osc3.SetFreq(660);   // 3x
+// osc4.Init(sample_rate);  osc4.SetFreq(880);   // 4x
+// osc5.Init(sample_rate);  osc5.SetFreq(1100);  // 5x
 ```
+
+---
