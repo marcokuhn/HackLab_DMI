@@ -143,17 +143,40 @@ e.g.
 *   **Effects**: reverb, delay, etc.
 +   **...**
 
-## 4. Project: Sine Wave
-We will generate a pure tone.
-1.  Initialize the Daisy hardware.
-2.  Set up the Oscillator object (Frequency, Waveform, Amplitude).
-3.  In the callback, call `osc.Process()` and send the result to the output.
 
-- Make you familiar with the DaisySP Oscillator – [DaisySP Reference](https://electro-smith.github.io/DaisySP/classdaisysp_1_1_oscillator.html)  
-- Solution [Oscillator Example] (https://github.com/electro-smith/DaisyExamples/blob/master/seed/DSP/oscillator/oscillator.cpp)
+## 4.BASIC Examples
 
+- Make you familiar with the DaisySP Reference e.g. Oscillator – [DaisySP Oscillator Reference](https://electro-smith.github.io/DaisySP/classdaisysp_1_1_oscillator.html)  
+- Learn from examples > [Daisy Seed DSP Examples](https://github.com/electro-smith/DaisyExamples/tree/master/seed/DSP)
 
----
-1.  Change the frequency of the oscillator.
-2.  Try different waveforms (Saw, Square, Triangle).
-3.  Add a second oscillator and mix them together.
+### CONNECT LFO To Oscillator Amplitude 
+### Chain modules (OSC + Filter)
+### Connect LFO to Filter Frequency (OSC > Filter > Out)
+### Mix signals together (Additive Synth with 5 Oscillator)
+
+```cpp
+// Example to mix 2 signals together
+static Oscillator osc1;  // First oscillator
+static Oscillator osc2;  // Second oscillator
+
+static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
+                          AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+{
+    float sig1, sig2, mixed;
+    
+    for(size_t i = 0; i < size; i += 2)
+    {
+        // Generate samples from both oscillators
+        sig1 = osc1.Process();
+        sig2 = osc2.Process();
+        
+        // Mix them together (add and scale)
+        mixed = (sig1 + sig2) * 0.5f;
+        
+        // Output to both channels
+        out[i] = mixed;
+        out[i + 1] = mixed;
+    }
+}
+```
