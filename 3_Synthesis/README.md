@@ -49,7 +49,7 @@ Build a synthesizer voice.
 ---
 **Assignment**:
 1.  Map a potentiometer to Filter Cutoff
-2.  Map a second potentiometer to Filter Resonance.(https://daisy.audio/tutorials/_a4_Getting-Started-ADCs/)
+2.  Map a second potentiometer to Filter Resonance.
 3.  Trigger the envelope with a button press.
 
 [Read Potentiometer]((https://daisy.audio/tutorials/_a4_Getting-Started-ADCs/))
