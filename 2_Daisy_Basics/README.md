@@ -213,10 +213,9 @@ static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
         // Step 1: Generate the oscillator signal
         osc_sig = osc.Process();
         // Step 2: Create the chain OSC > Filter
-        filtered_sig = filter.Process(osc_sig);
-        
+        filter.Process(osc_sig);
         // Create LowPass filter (Other SVF Filter options are High, Band, Notch, Peak )
-        filtered_sig = filtered_sig.Low()
+        filtered_sig = filter.Low()
 
         // Step 3: Output the filtered signal
         out[i] = filtered_sig;
@@ -246,7 +245,7 @@ static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                           AudioHandle::InterleavingOutputBuffer out,
                           size_t                                size)
 {
-    float osc_sig, lfo_freq, filtered_sig;
+    float osc_sig, lfo_freq
     
     for(size_t i = 0; i < size; i += 2)
     {
@@ -260,13 +259,12 @@ static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
         
         // Update filter cutoff with LFO value
         filter.SetFreq(lfo_freq);
-        
         // Process audio through the filter
-        filtered_sig = filter.Process(osc_sig);
+        filter.Process(osc_sig);
         
         // Output the result
-        out[i] = filtered_sig.Low();
-        out[i + 1] = filtered_sig.Low();
+        out[i] = filter.Low();
+        out[i + 1] = filter.Low();
     }
 }
 
