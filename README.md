@@ -37,9 +37,9 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
 
 | Week | Module | Focus |
 | :--- | :--- | :--- |
-| **01** | [Foundations](./Foundations) | Microcontroller basics, Toolchain setup, C++ Intro |
-| **02** | [Daisy Audio Basics](./Daisy_Basics) | libDaisy, DaisySP, Audio Callbacks, Basic Waveforms |
-| **03** | [Synthesis & Sound Design](./Synthesis) | Subtractive Synthesis, Filters, Envelopes, Modulation |
+| **01** | [Foundations](./1_Foundations) | Microcontroller basics, Toolchain setup, C++ Intro |
+| **02** | [Daisy Audio Basics](./2_Daisy_Basics) | libDaisy, DaisySP, Audio Callbacks, Basic Waveforms |
+| **03** | [Synthesis & Sound Design](./3_Synthesis) | Subtractive Synthesis, Filters, Envelopes, Modulation |
 | **04** | [Control & Sequencing](./Control_Sequencing) | Potentiometers, MIDI In/Out, Step Sequencers |
 | **05** | [Advanced Protocols](./Advanced_Protocols) | OSC, Advanced DSP Effects, Final Project |
 
