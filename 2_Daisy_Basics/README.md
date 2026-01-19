@@ -319,9 +319,9 @@ static void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 // In main(), initialize all 5 oscillators with harmonic frequencies:
 // osc1.Init(sample_rate);  osc1.SetFreq(220);   // Fundamental
 // osc2.Init(sample_rate);  osc2.SetFreq(440);   // 2x
-// osc3.Init(sample_rate);  osc3.SetFreq(660);   // 3x
-// osc4.Init(sample_rate);  osc4.SetFreq(880);   // 4x
-// osc5.Init(sample_rate);  osc5.SetFreq(1100);  // 5x
+// osc3.Init(sample_rate);  osc3.SetFreq(880);   // 4x
+// osc4.Init(sample_rate);  osc4.SetFreq(1760);  // 8x
+// osc5.Init(sample_rate);  osc5.SetFreq(3520);  // 16x
 ```
 
 ---
