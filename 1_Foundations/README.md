@@ -44,7 +44,7 @@ TODO: Modify the blinking speed.
 TODO: Change Default Pitch.
 
 ## 5. SOUND EXAMPLE via PLUGDATA
-- Download and Open [oscillator.pd](https://github.com/marcokuhn/HackLab_DMI/blob/main/Foundations/Examples/Plugdata/oscillator.pd) via PLUGDATA
+- Download and Open [oscillator.pd](https://github.com/marcokuhn/HackLab_DMI/blob/main/1_Foundations/Examples/Plugdata/oscillator.pd) via PLUGDATA
 - Compile
     - Patch to export > Currently open Patch
     - Target Board: Pod
