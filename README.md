@@ -57,7 +57,7 @@ The course is divided into 5 modules. Each module contains lecture notes, code e
   - [Plug Data](https://plugdata.org/)
 
 - **Github EDU Program**:
-
+[HowTo apply to GitHub Education as a student](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)
 
 ## Getting Started
 
