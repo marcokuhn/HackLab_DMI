@@ -20,7 +20,7 @@ A Microcontroller Unit (MCU) is a compact integrated circuit designed to govern 
 
 - **DAIZY**:
     - [DAIZY HARDWARE INTRODUCTION](https://docs.daisy.audio/hardware/Seed/)
-    - [DAIZY SEED PINOUT](https://docs.daisy.nyc3.cdn.digitaloceanspaces.com/products/seed/Daisy_Seed_pinout-25.pdf)
+    - [DAIZY SEED PINOUT](https://docs.daisy.audio/hardware/Seed/)
     - [DAIZY CODING OPTIONS](https://docs.daisy.audio/software/)
 
 ## 2. Setting Up C++ ENVIRONMENT
