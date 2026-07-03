@@ -19,12 +19,12 @@ A Microcontroller Unit (MCU) is a compact integrated circuit designed to govern 
 *   **Peripherals**: GPIO (General Purpose Input/Output), ADC (Analog to Digital Converter), DAC (Digital to Analog Converter).
 
 - **DAIZY**:
-    - [DAIZY HARDWARE INTRODUCTION](https://daisy.audio/hardware/Seed/)
-    - [DAIZY SEED PINOUT](https://daisy.nyc3.cdn.digitaloceanspaces.com/products/seed/Daisy_Seed_pinout-25.pdf)
-    - [DAIZY CODING OPTIONS](https://daisy.audio/software/)
+    - [DAIZY HARDWARE INTRODUCTION](https://docs.daisy.audio/hardware/Seed/)
+    - [DAIZY SEED PINOUT](https://docs.daisy.nyc3.cdn.digitaloceanspaces.com/products/seed/Daisy_Seed_pinout-25.pdf)
+    - [DAIZY CODING OPTIONS](https://docs.daisy.audio/software/)
 
 ## 2. Setting Up C++ ENVIRONMENT
-- [Getting Started with C++ Daisy](https://daisy.audio/tutorials/cpp-dev-env/)
+- [Getting Started with C++ Daisy](https://docs.daisy.audio/tutorials/cpp-dev-env/)
 - [GIT INTRODUCTION](https://rogerdudler.github.io/git-guide/)
 - [INTRODUCTION TO GITHUB](https://github.com/skills/introduction-to-github?tab=readme-ov-file)
 
